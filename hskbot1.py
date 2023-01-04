@@ -8,6 +8,9 @@ from facts import facts
 from google_trans_new import google_translator
 import gtts
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 path = Path(__file__).parents[0] # местонахождение файла hskbot1.py
 path_json = path / 'data.json' # местонахождение файла data.json
@@ -16,7 +19,7 @@ with open(path_json,encoding='utf-8') as json_file: # открывает фай�
 
 translator = google_translator() #обращяемся к переводчику
 
-TOKEN = "5837517226:AAGWxGdfNt7mHl292iF2EOUHOkcb3oEBezc" # token бота
+TOKEN = os.getenv('TOKEN') # token бота
 
 bot = telebot.TeleBot(TOKEN)
 
