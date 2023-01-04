@@ -73,5 +73,5 @@ def func(message):
         markup.add(button1, button2)
         bot.send_message(message.chat.id, text="Ты снова в начале пути", reply_markup=markup)
 
-bot.polling(none_stop=True) # должен быть в конце
+bot.infinity_polling(interval=0, timeout=600) # должен быть в конце
 
